@@ -104,3 +104,14 @@ def add_to_cart(request):
         return JsonResponse({'success': True, 'message': 'Item added to cart'})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=400)
+
+# ---- SECRET MENU VIEW ----
+from django.shortcuts import render, get_object_or_404
+from .models import Category, MenuItem
+
+def secret_menu(request):
+    # Requires a Category named "Secret Menu"
+    secret_category = get_object_or_404(Category, name="Secret Menu")
+    items = MenuItem.objects.filter(category=secret_category, available=True).order_by("name")
+    return render(request, "secret_menu.html", {"items": items, "title": "Secret Menu"})
+
