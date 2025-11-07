@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | DOM Pizza</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        :root {
+            --primary-red: #e31837;
+            --dark-bg: #1a1a1a;
+            --light-text: #ffffff;
+            --accent-text: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+
+        header.hero {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--dark-bg);
+        }
+
+        header.hero h1 {
+            font-size: 3rem;
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 0.5rem;
+        }
+
+        main.about-content {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .about-section {
+            background-color: #252525;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .about-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-section h2 {
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--accent-text);
+        }
+
+        footer.footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #111;
+            color: var(--accent-text);
+            margin-top: 3rem;
+        }
+
+        @media(max-width:768px){
+            header.hero h1{
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'pizza_menu:menu' %}" class="back-to-menu">← Back to Menu</a>
+    
+    <header class="hero">
+        <h1>About DOM Pizza</h1>
+    </header>
+
+    <main class="about-content">
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>DOM Pizza was founded with one simple idea: everyone should have the freedom to create their perfect pizza. What started as a small local kitchen with a passion for fresh ingredients has grown into a community-centered brand where every slice is crafted with care. We believe in bold flavors, limitless creativity, and creating experiences that bring people together around the table. Our journey is fueled by the love for pizza and the joy of sharing it with friends, families, and communities everywhere.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>At DOM Pizza, our mission is to redefine the pizza experience by combining speed, quality, and creativity. We aim to serve pizzas that are not only delicious but also fully customizable to each customer’s preferences. From locally sourced ingredients to innovative flavor combinations, we focus on excellence in every bite. We strive to create an inclusive space where everyone feels welcome, celebrating the simple joy of pizza while continuously pushing the boundaries of taste and freshness.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Team</h2>
+            <p>Every member of the DOM Pizza family is passionate about delivering an exceptional pizza experience. From our skilled dough makers and sauce artisans to our customer service and digital operations teams, each person plays a crucial role in making our vision a reality. We foster a collaborative, creative, and fun work environment, where innovation is encouraged, and dedication to quality is a shared value. Together, we work tirelessly to ensure that every customer enjoys a pizza experience that is as memorable as it is delicious.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 DOM Pizza. Built with Django.</p>
+    </footer>
+</body>
+</html>

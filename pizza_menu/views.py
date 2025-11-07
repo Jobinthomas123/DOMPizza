@@ -14,6 +14,11 @@ def menu_view(request):
     }
     return render(request, 'menu.html', context)
 
+def about_view(request):
+    categories = Category.objects.all()
+    return render(request, 'about.html', {'categories': categories})
+    
+
 def checkout_view(request):
     """Checkout page view"""
     if request.method == 'POST':

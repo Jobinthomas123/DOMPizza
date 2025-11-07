@@ -5,7 +5,7 @@ class Command(BaseCommand):
     help = 'Load sample menu data'
 
     def handle(self, *args, **kwargs):
-        self.stdout.write('Loading sample data...')
+        self.stdout.write('LoaDinnerg sample data...')
         
         # Clear existing data
         MenuItem.objects.all().delete()
@@ -433,4 +433,3 @@ class Command(BaseCommand):
         self.stdout.write(f'Created {Category.objects.count()} categories')
         self.stdout.write(f'Created {MenuItem.objects.count()} menu items')
         self.stdout.write(f'Created {Topping.objects.count()} toppings')
-
